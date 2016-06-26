@@ -9,12 +9,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var Hero = (function () {
-    function Hero() {
-    }
-    return Hero;
-}());
-exports.Hero = Hero;
+var hero_detail_component_1 = require('./hero-detail.component');
 var HEROES = [
     { id: 11, name: 'Mr.Nice' },
     { id: 12, name: 'Narco' },
@@ -38,8 +33,9 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n                <h1>{{title}}</h1>\n                <h2>My Heroes</h2>\n                <ul class=\"heroes\">\n                <li *ngFor=\"let hero of heroes\" \n                [class.selected]=\"hero === selectedHero\"\n                (click)=\"onSelect(hero)\">\n                        <span class=\"badge\">{{hero.id}}</span>{{hero.name}}\n                    </li>\n                </ul>\n                <div *ngIf=\"selectedHero\">\n                    <h2>{{selectedHero.name}} details!</h2>\n                    <div>\n                        <label>id: </label>{{selectedHero.id}}\n                    </div>\n                    <div>\n                        <label>name: </label>\n                        <input [(ngModel)]=\"selectedHero.name\" placeholder=\"name\"/>\n                    </div>\n                </div>\n                    ",
-            styles: ["\n        .selected {\nbackground-color: #CFD8DC !important;\ncolor:white;\n        }\n.heroes {\n    margin: 0 0 2em 0;\nlist-style-type:none;\n    padding:0;\n    width:15em;\n}\n.heroes li {\n    cursor:pointer;\n    position:relative;\n    left:0;\nbackground-color:#EEE;\n    margin:.5em;\n    padding: .3em 0;\n    height: 1.6em;\nborder-radius:4px;\n}\n.heroes li.selected:hover{\nbackground-color:#BBD8DC !important;\n    color:white;\n}\n.heroes li:hover{\n    color:#607D8B;\nbackground-color:#DDD;\n    left:.1em;\n}\n.heroes .text {\n    position.relative;\n    top:-3px;\n}\n.heroes .badge {\n    display:inline-block;\nfont-size:small;\n    color:white;\n    padding:0.8em 0.7em 0 0.7em;\nbackground-color:#607D8B;\nline-height:1em;\n    position:relative;\n    left:-1px;\n    top:-4px;\n    height:1.8em;\nmargin-right:.8em;\nborder-radius:4px 0 0 4px;\n}\n    "]
+            template: "\n                <h1>{{title}}</h1>\n                <h2>My Heroes</h2>\n                <ul class=\"heroes\">\n                <li *ngFor=\"let hero of heroes\" \n                [class.selected]=\"hero === selectedHero\"\n                (click)=\"onSelect(hero)\">\n                        <span class=\"badge\">{{hero.id}}</span>{{hero.name}}\n                    </li>\n                </ul>\n            <my-hero-detail [hero]=\"selectedHero\"></my-hero-detail>\n                    ",
+            styles: ["\n        .selected {\nbackground-color: #CFD8DC !important;\ncolor:white;\n        }\n.heroes {\n    margin: 0 0 2em 0;\nlist-style-type:none;\n    padding:0;\n    width:15em;\n}\n.heroes li {\n    cursor:pointer;\n    position:relative;\n    left:0;\nbackground-color:#EEE;\n    margin:.5em;\n    padding: .3em 0;\n    height: 1.6em;\nborder-radius:4px;\n}\n.heroes li.selected:hover{\nbackground-color:#BBD8DC !important;\n    color:white;\n}\n.heroes li:hover{\n    color:#607D8B;\nbackground-color:#DDD;\n    left:.1em;\n}\n.heroes .text {\n    position.relative;\n    top:-3px;\n}\n.heroes .badge {\n    display:inline-block;\nfont-size:small;\n    color:white;\n    padding:0.8em 0.7em 0 0.7em;\nbackground-color:#607D8B;\nline-height:1em;\n    position:relative;\n    left:-1px;\n    top:-4px;\n    height:1.8em;\nmargin-right:.8em;\nborder-radius:4px 0 0 4px;\n}\n    "],
+            directives: [hero_detail_component_1.HeroDetailComponent]
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
